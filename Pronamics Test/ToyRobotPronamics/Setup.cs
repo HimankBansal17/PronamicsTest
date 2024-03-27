@@ -94,7 +94,7 @@
         {
             Console.WriteLine(@$"
 Table Size ({Table.XSize}, {Table.YSize})
-Please follow the below instructions do respected actions:
+Please Enter following keys  to perform actions:
 Move -> SpaceBar 
 Left -> A
 Right -> D
@@ -102,7 +102,7 @@ Report -> R
 Place -> P
 ClearScreen -> C
 
-For place Facing follow the controls
+For  Facing values enter
 North -> 0
 East -> 1
 South -> 2
