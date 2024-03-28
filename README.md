@@ -13,11 +13,14 @@ Report -> R
 Place -> P
 ClearScreen -> C
 
+
 For  Facing values enter
-North -> 0
-East -> 1
-South -> 2
-West -> 3
+North 
+East 
+South 
+West 
+South 
+West
 
 # Testing
 To Test the app you can run the unit tests with different parameters to confirm.
