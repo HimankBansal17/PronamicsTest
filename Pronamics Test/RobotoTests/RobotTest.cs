@@ -36,12 +36,12 @@ namespace RobotoTests
 
 
         [Test]
-        [TestCase(1, 1,0)]
-        [TestCase(1, 10, 1)]
-        [TestCase(10, 10, 1)]
-        [TestCase(10, 1, 1)]
-        [TestCase(5, 5, 1)]
-        public void TestValidPlace(float toPlaceX, float toPlaceY, int robotFacingDirection)
+        [TestCase(1, 1,"North")]
+        [TestCase(1, 10, "East")]
+        [TestCase(10, 10, "East")]
+        [TestCase(10, 1, "East")]
+        [TestCase(5, 5, "East")]
+        public void TestValidPlace(float toPlaceX, float toPlaceY, string robotFacingDirection)
         {
             setup.PerformRobotPlace(new string[] {toPlaceX.ToString(),
                                                 toPlaceY.ToString(), robotFacingDirection.ToString()});
@@ -57,7 +57,7 @@ namespace RobotoTests
         [TestCase(11, 1, 0)]
         [TestCase(11, 11, 0)]
         [TestCase(10, 11, 0)]
-        public void TestInvalidValidPlace(float toPlaceX, float toPlaceY, int robotFacingDirection)
+        public void TestInvalidPlace(float toPlaceX, float toPlaceY, int robotFacingDirection)
         {
             setup.PerformRobotPlace(new string[] {toPlaceX.ToString(),
                                                 toPlaceY.ToString(), robotFacingDirection.ToString()});
@@ -76,7 +76,7 @@ namespace RobotoTests
         [TestCase("a", "b", "c")]
         [TestCase("1", "b", "c")]
 
-        public void TestInvalidValidPlace(string toPlaceX, string toPlaceY, string robotFacingDirection)
+        public void TestInvalidPlace(string toPlaceX, string toPlaceY, string robotFacingDirection)
         {
             setup.PerformRobotPlace(new string[] { toPlaceX, toPlaceY, robotFacingDirection });
             Assert.That(setup.ToyRobot.Position.X == 0);

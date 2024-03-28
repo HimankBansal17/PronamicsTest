@@ -68,13 +68,12 @@
 
         public void PerformRobotPlace(string[] xyPostSPlit)
         {
-            if (int.TryParse(xyPostSPlit[0], out var x) && int.TryParse(xyPostSPlit[1], out int y) && int.TryParse(xyPostSPlit[2], out var face))
+            if (int.TryParse(xyPostSPlit[0], out var x) && int.TryParse(xyPostSPlit[1], out int y) && Enum.TryParse<RobotFacingDirection>(xyPostSPlit[2], out var face))
             {
                 if (Table.IsInTableRange(x,y))
                 {
                     ToyRobot.Place(x,
-                          y,
-                          (RobotFacingDirection)face);
+                          y,face);
                 }
                 else
                 {
@@ -103,10 +102,23 @@ Place -> P
 ClearScreen -> C
 
 For  Facing values enter
-North -> 0
-East -> 1
-South -> 2
-West -> 3
+North
+East Table Size ({Table.XSize}, {Table.YSize})
+Please Enter following keys  to perform actions:
+Move -> SpaceBar 
+Left -> A
+Right -> D
+Report -> R
+Place -> P
+ClearScreen -> C
+
+For  Facing values enter
+North 
+East 
+South 
+West 
+South 
+West 
 
 ");
         }
